@@ -1,0 +1,30 @@
+{
+  "name": "mesys",
+  "version": "1.0.0",
+  "description": "a interface to AE Me system",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamuelEnzi/MeSys.git"
+  },
+  "keywords": [
+    "ME",
+    "AE"
+  ],
+  "author": "Samuel Enzi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SamuelEnzi/MeSys/issues"
+  },
+  "homepage": "https://github.com/SamuelEnzi/MeSys#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "helmet": "^7.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.48.0"
+  }
+}
