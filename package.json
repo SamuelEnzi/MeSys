@@ -23,10 +23,13 @@
   "homepage": "https://github.com/SamuelEnzi/MeSys#readme",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "helmet": "^7.0.0",
     "mariadb": "^3.2.0",
+    "mysql2": "^3.6.0",
+    "mysql2-promise": "^0.1.4",
     "sequelize": "^6.32.1"
   },
   "devDependencies": {

@@ -32,7 +32,7 @@ Item.init({
     updatedAt: false
   });
 
-  sequelize.sync({ force: true }).then(() => {
+  sequelize.sync({ alter: true }).then(() => {
     console.log('Database & tables created!');
   });
 
