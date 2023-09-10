@@ -1,6 +1,7 @@
 local component = require("component")
 local filesystem = require("filesystem")
 local internet = require("internet")
+local computer = require("computer")
 local io = require("io")
 
 -- 1. Prompt the user for IP Address
@@ -27,13 +28,11 @@ for chunk in response do
 end
 
 -- Directory and file path
-local dirPath = "mesys"
+local dirPath = "/home/mesys"
 local filePath = dirPath.."/server.lua"
 
 -- 3. Save the script
-if not filesystem.exists(dirPath) then
-    filesystem.makeDirectory(dirPath)
-end
+filesystem.makeDirectory(dirPath)   
 
 local file = io.open(filePath, "w")
 file:write(content)
@@ -44,7 +43,8 @@ print("Script saved to " .. filePath)
 -- 4. Set as startup script
 local startupPath = "/home/.shrc"
 file = io.open(startupPath, "a")  -- Open in append mode
-file:write("require(\"" .. filePath .. "\")\n")
+file:write(filePath)
 file:close()
 
 print("Script registered as startup script.")
+computer.shutdown(true)
