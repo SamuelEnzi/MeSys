@@ -198,6 +198,24 @@ class Database {
             connection.release();
         }
     }
+
+    async energyStats() {
+        const connection = await this.pool.getConnection();
+        try {
+            const sql = `
+            select * from energies order by id desc limit 1;
+            `;
+
+            const [rows] = await connection.query(sql);
+            return rows[0];
+        } catch (err) {
+            console.error('Error while fetching items:', err);
+            throw err;
+        }
+        finally {
+            connection.release();
+        }
+    }
 }
 
 const database = new Database();

@@ -39,4 +39,13 @@ router.get('/top', async (req, res, next) => {
     }
 });
 
+router.get('/energy', async (req, res, next) => {
+    try {
+        const statistics = await database.energyStats();
+        res.status(200).json(statistics);
+    } catch (error) {
+        next(error);
+    }
+});
+
 export default router;
